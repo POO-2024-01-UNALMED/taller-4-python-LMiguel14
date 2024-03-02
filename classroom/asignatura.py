@@ -5,4 +5,5 @@ class Asignatura:
         self._salon = salon
 
     def __str__(self):
-        return self._nombre + self._salon
+        objeto = f"{self._nombre} {self._salon}"
+        return objeto
