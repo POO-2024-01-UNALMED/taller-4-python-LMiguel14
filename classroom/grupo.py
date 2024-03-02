@@ -3,10 +3,10 @@ from classroom.asignatura import Asignatura         ##############
 class Grupo:
     grado = 12
 
-    def __init__(self, grupo= "grupo predeterminado", asignaturas=[],  estudiantes= None): #estudiantes con parametro por defecto
+    def __init__(self, grupo= "grupo predeterminado", asignaturas=[],  estudiantes= []): #estudiantes con parametro por defecto
         self._grupo = grupo
         self._asignaturas = asignaturas
-        self.listadoAlumnos = estudiantes
+        self.listadoAlumnos = list(estudiantes)
 
     def listadoAsignaturas(self, **kwargs  ):
         
@@ -16,10 +16,10 @@ class Grupo:
 
     def agregarAlumno(self, alumno, lista= None):
         if lista is None:
-            lista = []
+            lista= []
         lista.append(alumno)
-        #self.listadoAlumnos = self.listadoAlumnos + lista
-        self.listadoAlumnos = lista
+        self.listadoAlumnos = self.listadoAlumnos + lista
+        
 
     def __str__(self):
         return "Grupo de estudiantes: " + self._grupo
